@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import AddToDoForm from './components/AddToDoForm'
-import ToDoTable from './components/ToDoTable'
-import SearchToDoInput from './components/SearchToDoInput'
 import PageTitle from './components/PageTitle'
+import ToDosManager from './components/ToDosManager'
 
 function App() {
   const [toDos, setToDos] = useState([])
@@ -11,11 +9,15 @@ function App() {
   const [searchValue, setSearchValue] = useState('')
 
   function handleNewTitleChange(event) {
-    setNewToDo({ id: Math.random(), title: event.target.value })
+    setNewToDo({ id: Date.now(), title: event.target.value })
   }
 
   function handleSubmit(event) {
     event.preventDefault()
+    if (!newToDo || !newToDo.title.trim()) {
+      setNewToDo(null)
+      return
+    }
     setToDos([...toDos, newToDo])
     setNewToDo(null)
   }
@@ -25,23 +27,18 @@ function App() {
     setToDos(updatedToDos)
   }
 
-  const filteredToDos = toDos.filter((toDo) =>
-    toDo.title.toLowerCase().includes(searchValue.toLowerCase())
-  )
-
   return (
     <>
-      <PageTitle title={'ToDoApp'} />
-      <SearchToDoInput
+      <PageTitle title="ToDoApp" />
+      <ToDosManager
+        toDos={toDos}
+        newToDo={newToDo}
         searchValue={searchValue}
-        onSearchChange={setSearchValue}
-      />
-      <AddToDoForm
-        title={newToDo?.title}
         onTitleChange={handleNewTitleChange}
         onSubmit={handleSubmit}
+        onRemove={handleRemoveToDo}
+        onSearchChange={setSearchValue}
       />
-      <ToDoTable toDos={filteredToDos} onRemove={handleRemoveToDo} />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SearchToDoComponent = ({ searchValue, onSearchChange }) => {
+const SearchToDoInput = ({ searchValue, onSearchChange }) => {
   return (
     <input
       type="text"
@@ -11,4 +11,4 @@ const SearchToDoComponent = ({ searchValue, onSearchChange }) => {
   )
 }
 
-export default SearchToDoComponent
+export default SearchToDoInput

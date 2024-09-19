@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddToDOComponent = ({ title = '', onTitleChange, onSubmit }) => {
+const AddToDoForm = ({ title = '', onTitleChange, onSubmit }) => {
   return (
     <form>
       <input value={title} placeholder="Add" onChange={onTitleChange} />
@@ -9,4 +9,4 @@ const AddToDOComponent = ({ title = '', onTitleChange, onSubmit }) => {
   )
 }
 
-export default AddToDOComponent
+export default AddToDoForm
