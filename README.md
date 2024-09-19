@@ -1,5 +1,5 @@
 # ReactCourse_Chapter1
-##Lab3 Scheme 1 Relationship explanation (placed in the Lab3 folder)
+##Lab3 Scheme 1 Relationship explanation (placed in the Lab3 folder) <br>
 The App component is the main container that manages state and passes data to child components ToDoTable, SearchToDoInput, AddToDoForm and PageTitle<br>
 
 The PageTitle component receives the title prop<br>
