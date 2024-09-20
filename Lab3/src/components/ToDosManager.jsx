@@ -26,10 +26,10 @@ const ToDosManager = () => {
     setNewToDo(null)
   }
 
-  function handleRemoveToDo(id) {
-    const updatedToDos = toDos.filter((toDo) => toDo.id !== id)
-    setToDos(updatedToDos)
+  const handleRemoveToDo = (id) => {
+    setToDos(toDos.filter((toDo) => toDo.id !== id))
   }
+
   const filteredToDos = toDos.filter((toDo) =>
     toDo.title.toLowerCase().includes(searchValue.toLowerCase())
   )
@@ -38,14 +38,14 @@ const ToDosManager = () => {
     <div>
       <SearchToDoInput
         searchValue={searchValue}
-        onSearchChange={onSearchChange}
+        onSearchChange={setSearchValue}
       />
       <AddToDoForm
         title={newToDo?.title}
-        onTitleChange={onTitleChange}
-        onSubmit={onSubmit}
+        onTitleChange={handleNewTitleChange}
+        onSubmit={handleSubmit}
       />
-      <ToDoTable toDos={filteredToDos} onRemove={onRemove} />
+      <ToDoTable toDos={filteredToDos} onRemove={handleRemoveToDo} />
     </div>
   )
 }
