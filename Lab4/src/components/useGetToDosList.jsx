@@ -24,6 +24,6 @@ const useGetToDosList = () => {
   }, [])
 
   return { toDos, isLoading }
-};
+}
 
 export default useGetToDosList

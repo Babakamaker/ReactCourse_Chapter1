@@ -7,16 +7,11 @@ import AddToDoForm from './AddToDoForm'
 import ToDoTable from './ToDoTable'
 import SearchToDoInput from './SearchToDoInput'
 import useGetToDosList from './useGetToDosList'
-//import { useEffect } from 'react'
 
 const ToDosManager = () => {
-  // const [toDos, setToDos] = useState([])
   const { toDos, isLoading } = useGetToDosList()
   const [newToDo, setNewToDo] = useState(null)
   const [searchValue, setSearchValue] = useState('')
-  // useEffect(() => {fetch('https://jsonplaceholder.typicode.com/todos')
-  //   .then(response => response.json())
-  //   .then(json => setToDos(json))},[])
 
   function handleNewTitleChange(event) {
     setNewToDo({ id: Date.now(), title: event.target.value })
