@@ -9,7 +9,7 @@ import SearchToDoInput from './SearchToDoInput'
 import useGetToDosList from './useGetToDosList'
 
 const ToDosManager = () => {
-  const { toDos, isLoading } = useGetToDosList()
+  const { toDos, isLoading, setToDos } = useGetToDosList()
   const [newToDo, setNewToDo] = useState(null)
   const [searchValue, setSearchValue] = useState('')
 

@@ -23,7 +23,7 @@ const useGetToDosList = () => {
     fetchToDos()
   }, [])
 
-  return { toDos, isLoading }
+  return { toDos, isLoading, setToDos }
 }
 
 export default useGetToDosList
