@@ -6,7 +6,7 @@ import { useState } from 'react'
 import AddToDoForm from './AddToDoForm'
 import ToDoTable from './ToDoTable'
 import SearchToDoInput from './SearchToDoInput'
-import useGetToDosList from './useGetToDosList'
+import useGetToDosList from '../hooks/useGetToDosList'
 import Loader from './Loader'
 
 const ToDosManager = () => {
